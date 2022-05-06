@@ -10,8 +10,9 @@ public class GasCar extends Car{
 
 		super(basePrice,sellPrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type);
 		this.tankCapacity = tankCapacity;
+		this.batteryDuration = batteryDuration;
 
-		switch(type){
+		switch(typeG){
 		case 1: 
 			this.type = GasType.NORMAL;
 			break;

@@ -17,6 +17,7 @@ public class ElectricCar extends Car{
 				break;
 			case 2:  
 				this.cType = ChargerType.FAST;
+				break;
 		}
 	}
 }
