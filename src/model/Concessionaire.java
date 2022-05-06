@@ -18,6 +18,7 @@ public class Concessionaire{
 			used = true	
 		} else {
 			licensePlate = "";
+			mileage = 0;
 		}
 
 		if(tintedWindows == 1){
@@ -36,6 +37,7 @@ public class Concessionaire{
 			used = true	
 		} else {
 			licensePlate = "";
+			mileage = 0;
 		}
 
 		if(tintedWindows == 1){
@@ -46,6 +48,6 @@ public class Concessionaire{
 		vehicles.add(new GasCar(basePrice,sellPrice,brand,model,cylinderCapacity,mileage,used,licensePlate,numDoors,tWindows,type,tankCapacity,typeG));
 	}
 
-	
+
 
 }

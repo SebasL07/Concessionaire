@@ -111,5 +111,26 @@ public class Main{
 		System.out.println("Insert the sale price");
 		double sellPrice = reader.nextDouble();
 		reader.nextLine();
+
+		System.out.println("Insert the brand of the car");
+		String brand = reader.nextLine();
+
+		System.out.println("Insert the model of the car");
+		String model = reader.nextLine();
+
+		System.out.println("Insert the cylinder capacity of the car");
+		double cylinderCapacity = reader.nextDouble();
+		reader.nextLine();
+
+		System.out.println("The car was used before?\n"+
+			"1) Yes\n"
+			"2) No");
+		int wasUsed = reader.nextInt();
+		reader.nextLine();
+
+		if(wasUsed == 1){
+
+			System.out.println();
+		}
 	}
 }
