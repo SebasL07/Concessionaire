@@ -1,15 +1,17 @@
 package ui;
 import java.util.Scanner;
+import model.Concessionaire;
 
-//javac -cp src src/ui/Template.java -d bin
-//java -d bin ui.Template.java 
-
-public class Template{
+public class {
 	
-	static Scanner reader= new Scanner(System.in);
+	private Scanner reader;
 	
 	public static void main(String[] a){
 		
-		System.out.println("The template compiles!!!!");
+		System.out.println("Initializing...");
+		reader = new Scanner(System.in);
+
 	}
+
+
 }

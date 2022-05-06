@@ -11,6 +11,12 @@ public abstract class Document{
 		this.price = price;
 		this.year = year;
 		image = new int[MAX_IMAGE][MAX_IMAGE];
-		
+		for(int i = 0;i<MAX_IMAGE;i++){
+			for(int j = 0; j<MAX_IMAGE;j++){
+				image[i][j] = (int)(Math.random()*10);
+			}
+		}
 	}
+
+
 }
