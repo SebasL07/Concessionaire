@@ -127,6 +127,10 @@ public class Main{
 		int wasUsed = reader.nextInt();
 		reader.nextLine();
 
+		double priceSoat = -1;
+		int year = -1;
+		double insurance = -1;
+
 		if(wasUsed == 1){
 
 			System.out.println("Cuanto es el kilometraje del carro?");
@@ -139,6 +143,24 @@ public class Main{
 			System.out.println("Tiene Soat?\n" +
 				"1) Si\n" + 
 				"2) No");
+			int soat = reader.nextInt();
+			reader.nextLine();
+
+			if(soat = 1){
+				System.out.println("Que precio tiene el soat?");
+				priceSoat = reader.nextDouble();
+				reader.nextLine();
+
+				System.out.println("Que año tiene el SOAT?");
+				year = reader.nextInt();
+				reader.nextLine();
+
+				System.out.println("Cuanto cubre el seguro del SOAT?");
+				insurance = reader.nextDouble();
+				reader.nextLine();
+			} 
+
+			System.out.println("");
 
 		}
 	}
