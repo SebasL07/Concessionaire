@@ -11,8 +11,8 @@ public class HybridCar extends Car{
 	private double batteryDuration;
 	private double batteryConsumption;
 
-	public HybridCar(double basePrice, double sellPrice, String brand, String model, double cylinderCapacity, int mileage, boolean wasUsed, String licensePlate,int numDoors, boolean tintedWindows, int typeC,double tankCapacity, int typeG, double batteryDuration, int typeE){
-		super(basePrice,sellPrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,typeC);
+	public HybridCar(double basePrice, String brand, String model, double cylinderCapacity, double mileage, boolean wasUsed, String licensePlate,int numDoors, boolean tintedWindows, int typeC,double tankCapacity, int typeG, double batteryDuration, int typeE){
+		super(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,typeC);
 
 		this.tankCapacity = tankCapacity;
 

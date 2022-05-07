@@ -1,6 +1,6 @@
 package model;
 
-public class MTReview{
+public class MTReview extends Document{
 	private double gasLevel;
 
 	public MTReview(double price, int year, double gasLevel){

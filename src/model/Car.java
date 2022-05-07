@@ -6,9 +6,9 @@ public abstract class Car extends Vehicle{
 	private boolean tintedWindows;
 	private CarType type;
 
-	public Car(double basePrice, double sellPrice, String brand, String model, double cylinderCapacity, int mileage, boolean wasUsed, String licensePlate,int numDoors, boolean tintedWindows, int type){
+	public Car(double basePrice, String brand, String model, double cylinderCapacity, double mileage, boolean wasUsed, String licensePlate,int numDoors, boolean tintedWindows, int type){
 
-		super(basePrice,sellPrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate);
+		super(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate);
 		this.numDoors = numDoors;
 		this.tintedWindows = tintedWindows;
 
