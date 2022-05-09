@@ -213,4 +213,115 @@ public class Main{
 		objContr.addGasCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG);
 
 	}
+
+
+	public void registerElectricCar(){
+
+		System.out.println("Insert the brand of the car");
+		String brand = reader.nextLine();
+
+		System.out.println("Insert the model of the car");
+		String model = reader.nextLine();
+
+		System.out.println("Please insert the basic price of the car");
+		double basePrice = reader.nextDouble();
+		reader.nextLine();
+
+		System.out.println("Insert the cylinder capacity of the car");
+		double cylinderCapacity = reader.nextDouble();
+		reader.nextLine();
+
+		System.out.println("El carro fue usado?\n"+
+			"1) Yes\n"+
+			"2) No");
+		int wasUsed = reader.nextInt();
+		reader.nextLine();
+
+		double priceSoat = -1;
+		int yearSoat = -1;
+		double insurance = -1;
+		double mileage = 0;
+		String licensePlate = "";
+		double priceProperty = -1;
+		int yearProperty = -1;
+
+		if(wasUsed == 1){
+
+			System.out.println("Cuanto es el kilometraje del carro?");
+			mileage = reader.nextDouble();
+			reader.nextLine();
+
+			System.out.println("Cual es la placa del carro?");
+			licensePlate = reader.nextLine();
+
+			System.out.println("Tiene Soat?\n" +
+				"1) Si\n" + 
+				"2) No");
+			int soat = reader.nextInt();
+			reader.nextLine();
+
+			if(soat == 1){
+				System.out.println("Que precio tiene el soat?");
+				priceSoat = reader.nextDouble();
+				reader.nextLine();
+
+				System.out.println("Que año tiene el SOAT?");
+				yearSoat = reader.nextInt();
+				reader.nextLine();
+
+				System.out.println("Cuanto cubre el seguro del SOAT?");
+				insurance = reader.nextDouble();
+				reader.nextLine();
+			} 
+
+			System.out.println("Escriba los datos de la tarjeta de propiedad");
+			priceProperty = reader.nextDouble();
+
+			System.out.println("Que año tiene la tarjeta de propiedad?");
+			yearProperty = reader.nextInt();
+			reader.nextLine();
+		}
+
+		System.out.println("Ahora los datos de la revision tecnomecanica\n" + "Ingrese el precio de la revisión");
+		double priceMT=reader.nextDouble();
+		reader.nextLine();
+		System.out.println("Que año tiene la revision?");
+		double yearMT = reader.nextInt();
+		reader.nextLine();
+		System.out.println("Que niveles de gas indicaron la revision?");
+		double gasLevel = reader.nextDouble();
+		reader.nextLine();
+
+		System.out.println("Cuantas puertas tiene el carro?");
+		int numDoors = reader.nextInt();
+		reader.nextLine();
+
+		System.out.println("Tiene las ventanas polarizadas?\n"+
+			"1) Si\n"+ 
+			"2) No");
+		int tintedWindows = reader.nextInt();
+		reader.nextLine();
+
+		System.out.println("Que tipo de carro es?\n"+
+			"1) Sedan\n"+
+			"2) Camioneta");
+
+		int type = reader.nextInt();
+		reader.nextLine();
+
+		System.out.println("Cual es al capacidad del tanque?");
+		double tankCapacity = reader.nextDouble();
+		reader.nextLine();
+
+		System.out.println("Que tipo de gasolina utiliza?\n"+
+			"1) Normal\n"+
+			"2) Extra\n"+
+			"3) Diesel");
+		int typeG = reader.nextInt();
+		reader.nextLine();
+
+		objContr.addGasCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG);
+
+	}
+}
 }
