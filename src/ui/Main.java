@@ -99,6 +99,7 @@ public class Main{
 			registerGasCar();
 			break;
 		case 2:
+			registerElectricCar();
 			break;
 		case 3: 
 			break;
@@ -164,7 +165,8 @@ public class Main{
 				reader.nextLine();
 			} 
 
-			System.out.println("Escriba los datos de la tarjeta de propiedad");
+			System.out.println("Escriba los datos de la tarjeta de propiedad\n"+
+				"Precio de la tarjeta de propiedad");
 			priceProperty = reader.nextDouble();
 
 			System.out.println("Que año tiene la tarjeta de propiedad?");
@@ -274,7 +276,8 @@ public class Main{
 				reader.nextLine();
 			} 
 
-			System.out.println("Escriba los datos de la tarjeta de propiedad");
+			System.out.println("Escriba los datos de la tarjeta de propiedad\n"+
+				"Precio de la tarjeta de propiedad");
 			priceProperty = reader.nextDouble();
 
 			System.out.println("Que año tiene la tarjeta de propiedad?");
@@ -309,19 +312,18 @@ public class Main{
 		int type = reader.nextInt();
 		reader.nextLine();
 
-		System.out.println("Cual es al capacidad del tanque?");
-		double tankCapacity = reader.nextDouble();
+		System.out.println("Cual es la duracion de la bateria?");
+		double batteryDuration = reader.nextDouble();
 		reader.nextLine();
 
-		System.out.println("Que tipo de gasolina utiliza?\n"+
+		System.out.println("Que tipo de cargador utiliza?\n"+
 			"1) Normal\n"+
-			"2) Extra\n"+
-			"3) Diesel");
-		int typeG = reader.nextInt();
+			"2) Rapido");
+		int typeE = reader.nextInt();
 		reader.nextLine();
 
-		objContr.addGasCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG);
+		objContr.addElectricCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,batteryDuration,typeE);
 
 	}
 }
-}
+	
