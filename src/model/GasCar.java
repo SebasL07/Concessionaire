@@ -6,7 +6,7 @@ public class GasCar extends Car{
 	private GasType type;
 	private double gasConsumption;
 
-	public GasCar(double basePrice, String brand, String model, double cylinderCapacity, double mileage, boolean wasUsed, String licensePlate,int numDoors, boolean tintedWindows, int type, double tankCapacity, int typeG){
+	public GasCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, boolean wasUsed, String licensePlate,int numDoors, boolean tintedWindows, int type, double tankCapacity, int typeG){
 
 		super(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type);
 		this.tankCapacity = tankCapacity;
@@ -28,4 +28,7 @@ public class GasCar extends Car{
 		}
 		
 	}
+
+	@Override
+	public double calculateSalePrice
 }

@@ -10,7 +10,7 @@ public class Concessionaire{
 		vehicles = new ArrayList<Vehicle>();
 	}
 
-	public void addGasCar(double basePrice, String brand, String model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double tankCapacity, int typeG){
+	public void addGasCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double tankCapacity, int typeG){
 
 		boolean used = false;
 		boolean tWindows = false;
@@ -29,7 +29,7 @@ public class Concessionaire{
 		vehicles.add(new GasCar(basePrice,brand,model,cylinderCapacity,mileage,used,licensePlate,numDoors,tWindows,type,tankCapacity,typeG));
 	}
 
-	public void addElectricCar(double basePrice, String brand, String model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double batteryDuration, int typeE){
+	public void addElectricCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double batteryDuration, int typeE){
 		boolean used = false;
 		boolean tWindows = false;
 		if(wasUsed == 1){
@@ -55,7 +55,7 @@ public class Concessionaire{
 
 
 
-	public void addHybridCar(double basePrice, String brand, String model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double tankCapacity, int typeG,double batteryDuration, int typeE){
+	public void addHybridCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double tankCapacity, int typeG,double batteryDuration, int typeE){
 
 		boolean used = false;
 		boolean tWindows = false;
@@ -71,10 +71,6 @@ public class Concessionaire{
 		}
 		
 
-		vehicles.add(new GasCar(basePrice,brand,model,cylinderCapacity,mileage,used,licensePlate,numDoors,tWindows,type,tankCapacity,typeG));
-
-
-
-
-
+		vehicles.add(new HybridCar(basePrice,brand,model,cylinderCapacity,mileage,used,licensePlate,numDoors,tWindows,type,tankCapacity,typeG,batteryDuration,typeE));
+	}
 }

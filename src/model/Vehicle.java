@@ -1,18 +1,18 @@
 package model;
 
-public abstract class Vehicle{
+public abstract class Vehicle implements Consumption{
 	private static final int MAX_DOCUMENT = 3;
 	private double basePrice;
 	private double sellPrice;
 	private String brand;
-	private String model;
+	private int model;
 	private double cylinderCapacity;
 	private double mileage;
 	private boolean wasUsed;
 	private String licensePlate;
 	private Document[] documents;
 
-	public Vehicle(double basePrice, String brand, String model, double cylinderCapacity, double mileage, boolean wasUsed, String licensePlate){
+	public Vehicle(double basePrice, String brand, int model, double cylinderCapacity, double mileage, boolean wasUsed, String licensePlate){
 
 		this.basePrice = basePrice;
 		this.sellPrice = 0;
