@@ -47,4 +47,6 @@ public abstract class Vehicle implements Consumption{
 		documents[2] = new PropertyCard(price,year);
 		
 	}
+
+	public abstract double calculateSalePrice();
 }

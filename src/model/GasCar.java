@@ -30,5 +30,7 @@ public class GasCar extends Car{
 	}
 
 	@Override
-	public double calculateSalePrice
+	public double calculateSalePrice(){
+		
+	}
 }
