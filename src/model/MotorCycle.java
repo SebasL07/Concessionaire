@@ -17,5 +17,16 @@ public class MotorCycle extends Vehicle{
 		"Consumo de gasolina: " + gasConsumption;		
 	}
 
+	@Override
+	public double calculateSalePrice(){
+		return 0.0;
+	}
+
+	@Override
+	public void calculateConsumption(){
+
+		gasConsumption = tankCapacity * (super.getCylinderCapacity()/180);
+	}
+
 	
 }

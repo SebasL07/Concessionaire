@@ -32,10 +32,10 @@ public class Main{
 
 		System.out.println(
 				"Hola, bienvenido al concesionario y parqueadero. Que desea hacer?\n" +
-				"(1) Register a vehicle\n" +
-				"(2) Para crear el rectángulo\n"+
-				"(3) Para crear el círculo  \n"+
-				"(4) Para mostrar las figuras\n" +  
+				"(1) Registrar vehiculo\n" +
+				"(2) \n"+
+				"(3) \n"+
+				"(4) \n" +  
 				"(0) Para salir"
 				);
 		option= reader.nextInt();
@@ -217,7 +217,6 @@ public class Main{
 		objContr.addGasCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG);
 
 	}
-
 
 	public void registerElectricCar(){
 
@@ -448,6 +447,28 @@ public class Main{
 
 		objContr.addHybridCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG,batteryDuration,typeE);
 
+	}
+
+	public void showInformation(){
+
+		System.out.println("Por que criterios quiere ver la informacion?\n"+
+			"1) Tipo de vehiculo\n"+
+			"2) Tipo de combustible\n"+ 
+			"3) Autos nuevos/usados");
+		int option = reader.nextInt();
+		reader.nextLine();
+
+		switch(option){
+
+		case 1:
+			break;
+
+		case 2: 
+			break;
+
+		case 3:
+			break;
+		}
 	}
 }
 	

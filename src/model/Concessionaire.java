@@ -73,4 +73,6 @@ public class Concessionaire{
 
 		vehicles.add(new HybridCar(basePrice,brand,model,cylinderCapacity,mileage,used,licensePlate,numDoors,tWindows,type,tankCapacity,typeG,batteryDuration,typeE));
 	}
+
+	
 }

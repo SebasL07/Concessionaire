@@ -10,6 +10,7 @@ public abstract class Vehicle implements Consumption{
 	private double mileage;
 	private boolean wasUsed;
 	private String licensePlate;
+	private String id;
 	private Document[] documents;
 
 	public Vehicle(double basePrice, String brand, int model, double cylinderCapacity, double mileage, boolean wasUsed, String licensePlate){
@@ -52,6 +53,10 @@ public abstract class Vehicle implements Consumption{
 
 	public int getModel(){
 		return model;
+	}
+
+	public double getCylinderCapacity(){
+		return cylinderCapacity;
 	}
 
 	

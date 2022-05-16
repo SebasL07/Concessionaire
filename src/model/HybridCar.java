@@ -42,13 +42,24 @@ public class HybridCar extends Car{
 
 	@Override
 	public String toString(){
-		super.toString() + "\n" +
+		return super.toString() + "\n" +
 		"Capacidad del tanque: " + tankCapacity + "\n" +
-		"Tipo de gasolina: " + type + "\n" +
+		"Tipo de gasolina: " + gType + "\n" +
 		"Consumo de gasolina: " + gasConsumption + "\n" + 
 		"Capacidad de la bateria: " + batteryDuration + "\n" +
 		"Tipo de cargador: " + cType + "\n" +
 		"Consumo de la bateria: " + batteryConsumption + "\n";
+	}
+
+	@Override
+	public double calculateSalePrice(){
+		return 0.0;
+	}
+
+	@Override
+	public void calculateConsumption(){
+
+		gasConsumption = tankCapacity * (super.getCylinderCapacity()/180);
 	}
 }
 

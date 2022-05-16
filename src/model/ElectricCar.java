@@ -24,9 +24,19 @@ public class ElectricCar extends Car{
 
 	@Override
 	public String toString(){
-		super.toString() + "\n" +
+		return super.toString() + "\n" +
 		"Capacidad de la bateria: " + batteryDuration + "\n" +
 		"Tipo de cargador: " + cType + "\n" +
 		"Consumo de la bateria: " + batteryConsumption + "\n";
+	}
+
+	@Override
+	public double calculateSalePrice(){
+		return 0.0;
+	}
+
+	@Override
+	public void calculateConsumption(){
+
 	}
 }

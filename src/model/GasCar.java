@@ -37,10 +37,13 @@ public class GasCar extends Car{
 
 	@Override
 	public String toString(){
-		super.toString() + "\n" +
-		"Capacidad del tanque: " + tankCapacity + "\n" +
-		"Tipo de gasolina: " + type + "\n" +
-		"Consumo de gasolina: " + gasConsumption + "\n";
+		return super.toString() + "\n" + "Capacidad del tanque: " + tankCapacity + "\n" + "Tipo de gasolina: " + type + "\n" + "Consumo de gasolina: " + gasConsumption + "\n";
+	}
+
+	@Override
+	public void calculateConsumption(){
+
+		gasConsumption = tankCapacity * (super.getCylinderCapacity()/150);
 	}
 
 
