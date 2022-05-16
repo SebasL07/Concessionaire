@@ -10,6 +10,7 @@ public class GasCar extends Car{
 
 		super(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type);
 		this.tankCapacity = tankCapacity;
+		gasConsumption = 0;
 		
 
 		switch(typeG){
@@ -31,6 +32,16 @@ public class GasCar extends Car{
 
 	@Override
 	public double calculateSalePrice(){
-		
+		return 0.0;
 	}
+
+	@Override
+	public String toString(){
+		super.toString() + "\n" +
+		"Capacidad del tanque: " + tankCapacity + "\n" +
+		"Tipo de gasolina: " + type + "\n" +
+		"Consumo de gasolina: " + gasConsumption + "\n";
+	}
+
+
 }

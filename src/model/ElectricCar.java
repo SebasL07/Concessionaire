@@ -10,6 +10,7 @@ public class ElectricCar extends Car{
 		super(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type);
 
 		this.batteryDuration = batteryDuration;
+		batteryConsumption = 0;
 
 		switch(typeE){
 			case 1:
@@ -19,5 +20,13 @@ public class ElectricCar extends Car{
 				this.cType = ChargerType.FAST;
 				break;
 		}
+	}
+
+	@Override
+	public String toString(){
+		super.toString() + "\n" +
+		"Capacidad de la bateria: " + batteryDuration + "\n" +
+		"Tipo de cargador: " + cType + "\n" +
+		"Consumo de la bateria: " + batteryConsumption + "\n";
 	}
 }

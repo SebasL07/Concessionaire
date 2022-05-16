@@ -39,4 +39,16 @@ public class HybridCar extends Car{
 		}
 		
 	}
+
+	@Override
+	public String toString(){
+		super.toString() + "\n" +
+		"Capacidad del tanque: " + tankCapacity + "\n" +
+		"Tipo de gasolina: " + type + "\n" +
+		"Consumo de gasolina: " + gasConsumption + "\n" + 
+		"Capacidad de la bateria: " + batteryDuration + "\n" +
+		"Tipo de cargador: " + cType + "\n" +
+		"Consumo de la bateria: " + batteryConsumption + "\n";
+	}
 }
+

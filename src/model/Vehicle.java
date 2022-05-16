@@ -49,4 +49,11 @@ public abstract class Vehicle implements Consumption{
 	}
 
 	public abstract double calculateSalePrice();
+
+	public int getModel(){
+		return model;
+	}
+
+	
+
 }
