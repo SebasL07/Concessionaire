@@ -10,7 +10,7 @@ public class Concessionaire{
 		vehicles = new ArrayList<Vehicle>();
 	}
 
-	public void addGasCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double tankCapacity, int typeG){
+	public void addGasCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double tankCapacity, int typeG,double priceSoat,double priceMT,double price, int yearSoat, int yearMT,int year, double insurance, double gasLevel){
 
 		boolean used = false;
 		boolean tWindows = false;
@@ -27,6 +27,7 @@ public class Concessionaire{
 		
 
 		vehicles.add(new GasCar(basePrice,brand,model,cylinderCapacity,mileage,used,licensePlate,numDoors,tWindows,type,tankCapacity,typeG));
+		vehicles.addDocuments(priceSoat,priceMT,price,yearSoat,yearMT,year,insurance,gasLevel);
 	}
 
 	public void addElectricCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double batteryDuration, int typeE){
@@ -46,13 +47,6 @@ public class Concessionaire{
 
 		vehicles.add(new ElectricCar(basePrice,brand,model,cylinderCapacity,mileage,used,licensePlate,numDoors,tWindows,type,batteryDuration,typeE));
 	}
-
-	public void addDocument2Vehicle(int option, double price, int year, double insurance, double gasLevel){
-
-		
-
-	}
-
 
 
 	public void addHybridCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double tankCapacity, int typeG,double batteryDuration, int typeE){

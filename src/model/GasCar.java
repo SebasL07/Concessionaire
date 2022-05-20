@@ -46,5 +46,9 @@ public class GasCar extends Car{
 		gasConsumption = tankCapacity * (super.getCylinderCapacity()/150);
 	}
 
+	public GasType getGasType(){
+		return type;
+	}
+
 
 }

@@ -41,21 +41,21 @@ public abstract class Vehicle implements Consumption{
 		"Placa: " + licensePlate;
 	}
 
-	public void addDocument(int optionS,int optionMT, int optionProp,double priceSoat,double priceMT,double price, int yearSoat, int yearMT,int year, double insurance, double gasLevel){
+	public void addDocument(double priceSoat,double priceMT,double price, int yearSoat, int yearMT,int year, double insurance, double gasLevel){
 		
-		if(optionS != -1){
+		if(yearSoat != -1 && yearSoat == 2022){
 			documents[0] = new SOAT(price,year,insurance);
 		} else {
 			documents[0] = null;
 		} 
 
-		if(optionMT != -1){
+		if(yearMT == 2022){
 			documents[1] = new MTReview(price,year,gasLevel);
 		}else{
 			documents[1] = null;
 		}
 		
-		if(optionProp != -1){
+		if(year != -1 && year == 2022){
 			documents[2] = new PropertyCard(price,year);
 		}else{
 			documents[2] = null;

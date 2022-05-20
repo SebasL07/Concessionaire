@@ -180,7 +180,7 @@ public class Main{
 		double priceMT=reader.nextDouble();
 		reader.nextLine();
 		System.out.println("Que año tiene la revision?");
-		double yearMT = reader.nextInt();
+		int yearMT = reader.nextInt();
 		reader.nextLine();
 		System.out.println("Que niveles de gas indicaron la revision?");
 		double gasLevel = reader.nextDouble();
@@ -214,7 +214,7 @@ public class Main{
 		int typeG = reader.nextInt();
 		reader.nextLine();
 
-		objContr.addGasCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG);
+		objContr.addGasCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
 
 	}
 
