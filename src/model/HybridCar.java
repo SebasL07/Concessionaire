@@ -57,7 +57,7 @@ public class HybridCar extends Car implements IFuel{
 	public void calculateSalePrice(){
 		double sellPrice = 0;
 
-		if(documents[0] == null && documents[1] ==null){
+		if(documents[0] == null || documents[1].getYear() != 2022){
 			sellPrice = super.getBasePrice() + 500000; 
 		} 
 
@@ -79,7 +79,7 @@ public class HybridCar extends Car implements IFuel{
 
 	@Override
 	public GasType getGasType(){
-		return type;
+		return gType;
 	}
 }
 

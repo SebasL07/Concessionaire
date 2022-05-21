@@ -18,23 +18,16 @@ public abstract class Document{
 		}
 	}
 
-	public String decodeImage(){
+	public abstract String decodeImage();
 
-		String imgDecoded = "";
+	public String toString(){
+		return "\n****Datos****\n"+
+		"Año: " + year + "\n" +
+		"Precio: "+ price + "\n";
+	}
 
-		for(int i = 0;i<MAX_IMAGE;i++){
-			if(i == MAX_IMAGE-1){
-				for(int j = 0;j<MAX_IMAGE;j++){
-					imgDecoded += image[i][j];
-				}
-			} else {
-				imgDecoded += image[i][0];
-			}
-
-		}
-
-		return imgDecoded;
-
+	public int getYear(){
+		return year;
 	}
 
 

@@ -34,7 +34,7 @@ public class Main{
 				"\nHola, bienvenido al concesionario y parqueadero. Que desea hacer?\n" +
 				"(1) Registrar vehiculo\n" +
 				"(2) Mostrar informacion\n"+
-				"(3) \n"+
+				"(3) Buscar documentacionde un vehiculo\n"+
 				"(4) \n" +  
 				"(0) Para salir"
 				);
@@ -57,7 +57,7 @@ public class Main{
 			break;
 	
 		case 3:
-			
+			showDocumentByID();
 			break;
 
 		case 4:
@@ -581,7 +581,7 @@ public class Main{
 			int option3 = reader.nextInt();
 			reader.nextLine();
 
-			System.out.println(objContr.showInfoFuel(option3));
+			//System.out.println(objContr.showInfoFuel(option3));
 			break;
 
 		case 3:
@@ -603,6 +603,13 @@ public class Main{
 			}
 			break;
 		}
+	}
+
+	public void showDocumentByID(){
+		System.out.println("Escriba el ID del vehiculo del cual desee ver la documentacion:");
+		String id = reader.nextLine();
+
+		System.out.println(objContr.showDocumentByID(id));
 	}
 }
 	

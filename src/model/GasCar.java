@@ -37,7 +37,7 @@ public class GasCar extends Car implements IFuel{
 		
 		double sellPrice = 0;
 
-		if(documents[0] == null || documents[1] ==null){
+		if(documents[0] == null || documents[1].getYear() != 2022){
 			sellPrice = super.getBasePrice() + 500000; 
 		} else{
 			sellPrice = super.getBasePrice();

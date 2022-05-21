@@ -141,9 +141,9 @@ public class Concessionaire{
 	public String showInfoFuel(int option){
 
 		String msg = "";
-
+		/*
 		switch(option){
-
+		
 		case 1: 
 			for(int i = 0; i<vehicles.size();i++){
 				if (vehicles.get(i) instanceof GasCar || vehicles.get(i) instanceof HybridCar) {
@@ -176,7 +176,38 @@ public class Concessionaire{
 			}
 			break;
 		}
+		*/
+		return msg;
+	}
 
+	public String showDocumentByID(String id){
+		
+		String msg = "";
+		int pos = findVehicle(id);
+
+		if(pos != -1){
+			msg += vehicles.get(pos).showDocument();
+		}else{
+			msg = "Lo sentimos es vehiculo no existe";
+		}
+
+		return msg;
+		
+	}
+
+	public int findVehicle(String id){
+
+		boolean sen = false;
+		int idFound = -1; 
+
+		for(int i = 0;i<vehicles.size() && !sen;i++){
+			if(id.equals(vehicles.get(i).getID())){
+				idFound = i;
+				sen = true;
+			}
+		}
+
+		return idFound;
 	}
 
 

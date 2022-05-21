@@ -23,6 +23,9 @@ public abstract class Vehicle implements Consumption{
 		this.mileage = mileage;
 		this.wasUsed = wasUsed;
 		this.licensePlate = licensePlate;
+		for(int i = 0; i<5; i++){
+			id += (int)(Math.random()*10);
+		}
 		documents = new Document[MAX_DOCUMENT];
 	}
 	public String toString(){
@@ -31,6 +34,7 @@ public abstract class Vehicle implements Consumption{
 			msg = "Si";
 		}
 		return "\n****Datos del Vehiculo****\n"+
+		"ID del vehiculo: " + id + "\n" +
 		"Precio base: " + basePrice + "\n"+
 		"Precio de venta: " + sellPrice + "\n"+ 
 		"Marca: " + brand + "\n" + 
@@ -49,11 +53,9 @@ public abstract class Vehicle implements Consumption{
 			documents[0] = null;
 		} 
 
-		if(yearMT == 2022){
-			documents[1] = new MTReview(price,year,gasLevel);
-		}else{
-			documents[1] = null;
-		}
+		
+		documents[1] = new MTReview(price,year,gasLevel);
+		
 		
 		if(year != -1){
 			documents[2] = new PropertyCard(price,year);
@@ -63,6 +65,18 @@ public abstract class Vehicle implements Consumption{
 		
 		
 		
+	}
+
+	public  String showDocument(){
+		String msg = "";
+
+		for(int i = 0;i<MAX_DOCUMENT;i++){
+			if(documents[i] != null){
+				msg += documents[i].toString();
+			}
+		}
+
+		return msg;
 	}
 
 	public abstract void calculateSalePrice();
@@ -85,6 +99,9 @@ public abstract class Vehicle implements Consumption{
 
 	public boolean getWasUsed(){
 		return wasUsed;
+	}
+	public String getID(){
+		return id;
 	}
 
 	
