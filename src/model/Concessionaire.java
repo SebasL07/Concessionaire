@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Concessionaire{
 	
-	private ArrayList<Vehicle> vehicles;
+	protected ArrayList<Vehicle> vehicles;
 
 
 	public Concessionaire(){
@@ -27,7 +27,7 @@ public class Concessionaire{
 		
 
 		vehicles.add(new GasCar(basePrice,brand,model,cylinderCapacity,mileage,used,licensePlate,numDoors,tWindows,type,tankCapacity,typeG));
-		vehicles.addDocuments(priceSoat,priceMT,price,yearSoat,yearMT,year,insurance,gasLevel);
+		vehicles.get(vehicles.size()-1).addDocument(priceSoat,priceMT,price,yearSoat,yearMT,year,insurance,gasLevel);
 	}
 
 	public void addElectricCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double batteryDuration, int typeE){
