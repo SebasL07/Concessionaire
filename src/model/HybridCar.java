@@ -1,6 +1,6 @@
 package model;
 
-public class HybridCar extends Car{
+public class HybridCar extends Car implements IFuel{
 	
 	private double tankCapacity;
 	private GasType gType;
@@ -13,6 +13,8 @@ public class HybridCar extends Car{
 		super(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,typeC);
 
 		this.tankCapacity = tankCapacity;
+		calculateSalePrice();
+		calculateConsumption();
 
 		switch(typeG){
 		case 1: 
@@ -73,6 +75,11 @@ public class HybridCar extends Car{
 	public void calculateConsumption(){
 
 		gasConsumption = tankCapacity * (super.getCylinderCapacity()/180);
+	}
+
+	@Override
+	public GasType getGasType(){
+		return type;
 	}
 }
 

@@ -11,6 +11,8 @@ public class ElectricCar extends Car{
 
 		this.batteryDuration = batteryDuration;
 		batteryConsumption = 0;
+		calculateSalePrice();
+		calculateConsumption();
 
 		switch(typeE){
 			case 1:

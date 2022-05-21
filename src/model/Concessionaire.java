@@ -70,16 +70,114 @@ public class Concessionaire{
 		vehicles.get(vehicles.size()-1).addDocument(priceSoat,priceMT,price,yearSoat,yearMT,year,insurance,gasLevel);
 	}
 
+	public void addMotorCycle(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate, int mType, double tankCapacity,double priceSoat,double priceMT,double price, int yearSoat, int yearMT,int year, double insurance, double gasLevel){
+
+		boolean used = false;
+		if(wasUsed == 1){
+			used = true;	
+		} else {
+			licensePlate = "";
+			mileage = 0;
+		}
+		
+
+		vehicles.add(new MotorCycle(basePrice,brand,model,cylinderCapacity,mileage,used,licensePlate,mType,tankCapacity));
+		vehicles.get(vehicles.size()-1).addDocument(priceSoat,priceMT,price,yearSoat,yearMT,year,insurance,gasLevel);
+	}
+
 	public String showInfoCar(){
 
 		String msg = "";
 
 		for(int i = 0; i<vehicles.size();i++){
 			if(vehicles.get(i) instanceof GasCar || vehicles.get(i) instanceof ElectricCar || vehicles.get(i) instanceof HybridCar){
-				vehicles.get(i).toString();
+				msg += vehicles.get(i).toString();
 			}	
 		}
 
 		return msg;
 	}
+
+	public String showInfoMoto(){
+
+		String msg = "";
+
+		for(int i = 0; i<vehicles.size();i++){
+			if(vehicles.get(i) instanceof MotorCycle){
+				msg += vehicles.get(i).toString();
+			}	
+		}
+
+		return msg;
+	}
+
+	public String showInfoUsed(){
+
+		String msg = "";
+
+		for(int i = 0; i<vehicles.size();i++){
+			if (vehicles.get(i).getWasUsed()) {
+				msg += vehicles.get(i).toString();
+			}
+		}
+
+		return msg;
+	}
+
+
+	public String showInfoNew(){
+
+		String msg = "";
+
+		for(int i = 0; i<vehicles.size();i++){
+			if (!(vehicles.get(i).getWasUsed())) {
+				msg += vehicles.get(i).toString();
+			}
+		}
+
+		return msg;
+	}
+
+	public String showInfoFuel(int option){
+
+		String msg = "";
+
+		switch(option){
+
+		case 1: 
+			for(int i = 0; i<vehicles.size();i++){
+				if (vehicles.get(i) instanceof GasCar || vehicles.get(i) instanceof HybridCar) {
+					if(vehicles.get(i).getGasType() == GasType.NORMAL || vehicles.get(i).getGasType() == GasType.NORMAL){
+						msg += vehicles.get(i).toString();
+					}
+				}
+			}
+			break;
+
+		case 2: 
+
+			for(int i = 0; i<vehicles.size();i++){
+				if (vehicles.get(i) instanceof GasCar || vehicles.get(i) instanceof HybridCar) {
+					if(vehicles.get(i).getGasType() == GasType.EXTRA || vehicles.get(i).getGasType() == GasType.EXTRA){
+						msg += vehicles.get(i).toString();
+					}
+				}
+			}
+			break;
+
+		case 3: 
+
+			for(int i = 0; i<vehicles.size();i++){
+				if (vehicles.get(i) instanceof GasCar || vehicles.get(i) instanceof HybridCar) {
+					if(vehicles.get(i).getGasType() == GasType.DIESEL || vehicles.get(i).getGasType() == GasType.DIESEL){
+						msg += vehicles.get(i).toString();
+					}
+				}
+			}
+			break;
+		}
+
+	}
+
+
 }

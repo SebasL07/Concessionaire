@@ -30,14 +30,14 @@ public abstract class Vehicle implements Consumption{
 		if(wasUsed){
 			msg = "Si";
 		}
-		return "****Datos del Vehiculo****\n"+
+		return "\n****Datos del Vehiculo****\n"+
 		"Precio base: " + basePrice + "\n"+
 		"Precio de venta: " + sellPrice + "\n"+ 
 		"Marca: " + brand + "\n" + 
 		"Modelo: " + model + "\n"+
 		"Cilindraje: " + cylinderCapacity + "\n"+ 
 		"Kilometraje: " + mileage + "\n"+ 
-		"Usado: " + msg+ "\n"+ 
+		"Usado: " + msg + "\n"+ 
 		"Placa: " + licensePlate;
 	}
 

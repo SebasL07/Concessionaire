@@ -1,6 +1,6 @@
 package model;
 
-public class GasCar extends Car{
+public class GasCar extends Car implements IFuel{
 	
 	private double tankCapacity;
 	private GasType type;
@@ -11,7 +11,9 @@ public class GasCar extends Car{
 		super(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type);
 		this.tankCapacity = tankCapacity;
 		gasConsumption = 0;
-		
+		calculateSalePrice();
+		calculateConsumption();
+
 
 		switch(typeG){
 		case 1: 
@@ -35,7 +37,7 @@ public class GasCar extends Car{
 		
 		double sellPrice = 0;
 
-		if(documents[0] == null && documents[1] ==null){
+		if(documents[0] == null || documents[1] ==null){
 			sellPrice = super.getBasePrice() + 500000; 
 		} else{
 			sellPrice = super.getBasePrice();
@@ -58,7 +60,7 @@ public class GasCar extends Car{
 
 		gasConsumption = tankCapacity * (super.getCylinderCapacity()/150);
 	}
-
+	@Override
 	public GasType getGasType(){
 		return type;
 	}

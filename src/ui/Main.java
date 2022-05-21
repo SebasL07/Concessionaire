@@ -13,7 +13,7 @@ public class Main{
 	}
 	public static void main(String [] args) {
 		
-		System.out.println("Initializing...");
+		System.out.println("Iniciando la aplicacion...\n");
 		
 		Main ppal= new Main();
 		
@@ -31,7 +31,7 @@ public class Main{
 		int option=0;
 
 		System.out.println(
-				"Hola, bienvenido al concesionario y parqueadero. Que desea hacer?\n" +
+				"\nHola, bienvenido al concesionario y parqueadero. Que desea hacer?\n" +
 				"(1) Registrar vehiculo\n" +
 				"(2) Mostrar informacion\n"+
 				"(3) \n"+
@@ -215,7 +215,6 @@ public class Main{
 		reader.nextLine();
 
 		objContr.addGasCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
-
 	}
 
 	public void registerElectricCar(){
@@ -446,7 +445,101 @@ public class Main{
 		reader.nextLine();
 
 		objContr.addHybridCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG,batteryDuration,typeE,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
+	}
 
+	public void registerMotorcycle(){
+
+		System.out.println("Cual es la marca de la moto?");
+		String brand = reader.nextLine();
+
+		System.out.println("Ingrese el modelo de la moto");
+		int model = reader.nextInt();
+		reader.nextLine();
+
+		System.out.println("Ingrese el precio base de la moto");
+		double basePrice = reader.nextDouble();
+		reader.nextLine();
+
+		System.out.println("Inserte el cilindraje de la moto");
+		double cylinderCapacity = reader.nextDouble();
+		reader.nextLine();
+
+		System.out.println("La moto fue usada?\n"+
+			"1) Si\n"+
+			"2) No");
+		int wasUsed = reader.nextInt();
+		reader.nextLine();
+
+		double priceSoat = -1;
+		int yearSoat = -1;
+		double insurance = -1;
+		double mileage = 0;
+		String licensePlate = "";
+		double priceProperty = -1;
+		int yearProperty = -1;
+
+		if(wasUsed == 1){
+
+			System.out.println("Cuanto es el kilometraje de la moto?");
+			mileage = reader.nextDouble();
+			reader.nextLine();
+
+			System.out.println("Cual es la placa la moto?");
+			licensePlate = reader.nextLine();
+
+			System.out.println("Tiene Soat?\n" +
+				"1) Si\n" + 
+				"2) No");
+			int soat = reader.nextInt();
+			reader.nextLine();
+
+			if(soat == 1){
+				System.out.println("Que precio tiene el soat?");
+				priceSoat = reader.nextDouble();
+				reader.nextLine();
+
+				System.out.println("Que año tiene el SOAT?");
+				yearSoat = reader.nextInt();
+				reader.nextLine();
+
+				System.out.println("Cuanto cubre el seguro del SOAT?");
+				insurance = reader.nextDouble();
+				reader.nextLine();
+			} 
+
+			System.out.println("Escriba los datos de la tarjeta de propiedad\n"+
+				"Precio de la tarjeta de propiedad");
+			priceProperty = reader.nextDouble();
+
+			System.out.println("Que año tiene la tarjeta de propiedad?");
+			yearProperty = reader.nextInt();
+			reader.nextLine();
+		}
+
+		System.out.println("Ahora los datos de la revision tecnomecanica\n" + "Ingrese el precio de la revisión");
+		double priceMT=reader.nextDouble();
+		reader.nextLine();
+		System.out.println("Que año tiene la revision?");
+		int yearMT = reader.nextInt();
+		reader.nextLine();
+		System.out.println("Que niveles de gas indicaron la revision?");
+		double gasLevel = reader.nextDouble();
+		reader.nextLine();
+
+		System.out.println("Que tipo de moto es?\n"+
+			"1) Estandar\n"+
+			"2) Deportiva\n"+
+			"3) Scooter\n"+
+			"4) Cross");
+
+		int type = reader.nextInt();
+		reader.nextLine();
+
+		System.out.println("Cual es al capacidad del tanque?");
+		double tankCapacity = reader.nextDouble();
+		reader.nextLine();
+
+		objContr.addMotorCycle(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,type,tankCapacity,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
 	}
 
 	public void showInformation(){
@@ -472,6 +565,7 @@ public class Main{
 				System.out.println(objContr.showInfoCar());
 				break;
 			case 2: 
+				System.out.println(objContr.showInfoMoto());
 				break;
 			}
 
@@ -479,9 +573,34 @@ public class Main{
 
 			break;
 		case 2: 
+			System.out.println("Desea ver los vehiculos con gasolina:\n"+
+				"1) Normal\n"+
+				"2) Extra\n"+
+				"3) Diesel");
+
+			int option3 = reader.nextInt();
+			reader.nextLine();
+
+			System.out.println(objContr.showInfoFuel(option3));
 			break;
 
 		case 3:
+
+			System.out.println("Desea ver los vehiculos:\n"+
+				"1) Nuevos\n"+
+				"2) Usados ");
+			int option4 = reader.nextInt();
+			reader.nextLine();
+
+			switch(option4){
+			case 1:
+				System.out.println(objContr.showInfoNew());
+				break;
+
+			case 2: 
+				System.out.println(objContr.showInfoUsed());
+				break;
+			}
 			break;
 		}
 	}
