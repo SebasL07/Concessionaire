@@ -7,4 +7,5 @@ public class MTReview extends Document{
 		super(price,year);
 		this.gasLevel = gasLevel;
 	}
+	
 }

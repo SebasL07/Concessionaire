@@ -11,7 +11,7 @@ public abstract class Vehicle implements Consumption{
 	private boolean wasUsed;
 	private String licensePlate;
 	private String id;
-	private Document[] documents;
+	protected Document[] documents;
 
 	public Vehicle(double basePrice, String brand, int model, double cylinderCapacity, double mileage, boolean wasUsed, String licensePlate){
 
@@ -55,7 +55,7 @@ public abstract class Vehicle implements Consumption{
 			documents[1] = null;
 		}
 		
-		if(year != -1 && year == 2022){
+		if(year != -1){
 			documents[2] = new PropertyCard(price,year);
 		}else{
 			documents[2] = null;
@@ -65,7 +65,7 @@ public abstract class Vehicle implements Consumption{
 		
 	}
 
-	public abstract double calculateSalePrice();
+	public abstract void calculateSalePrice();
 
 	public int getModel(){
 		return model;
@@ -73,6 +73,18 @@ public abstract class Vehicle implements Consumption{
 
 	public double getCylinderCapacity(){
 		return cylinderCapacity;
+	}
+
+	public double getBasePrice(){
+		return basePrice;
+	}
+
+	public void setSellPrice(double sP){
+		sellPrice = sP;
+	}
+
+	public boolean getWasUsed(){
+		return wasUsed;
 	}
 
 	

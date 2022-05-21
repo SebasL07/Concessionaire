@@ -52,9 +52,22 @@ public class HybridCar extends Car{
 	}
 
 	@Override
-	public double calculateSalePrice(){
-		return 0.0;
+	public void calculateSalePrice(){
+		double sellPrice = 0;
+
+		if(documents[0] == null && documents[1] ==null){
+			sellPrice = super.getBasePrice() + 500000; 
+		} 
+
+		sellPrice = super.getBasePrice() + (super.getBasePrice()*0.15);
+
+		if(super.getWasUsed()){
+			sellPrice = super.getBasePrice() - (super.getBasePrice()*0.10);
+		}
+		
+		super.setSellPrice(sellPrice);
 	}
+	
 
 	@Override
 	public void calculateConsumption(){

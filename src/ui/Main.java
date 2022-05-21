@@ -33,7 +33,7 @@ public class Main{
 		System.out.println(
 				"Hola, bienvenido al concesionario y parqueadero. Que desea hacer?\n" +
 				"(1) Registrar vehiculo\n" +
-				"(2) \n"+
+				"(2) Mostrar informacion\n"+
 				"(3) \n"+
 				"(4) \n" +  
 				"(0) Para salir"
@@ -53,7 +53,7 @@ public class Main{
 			registerVehicle();
 			break;
 		case 2:
-			
+			showInformation();
 			break;
 	
 		case 3:
@@ -291,7 +291,7 @@ public class Main{
 		double priceMT=reader.nextDouble();
 		reader.nextLine();
 		System.out.println("Que año tiene la revision?");
-		double yearMT = reader.nextInt();
+		int yearMT = reader.nextInt();
 		reader.nextLine();
 		System.out.println("Que niveles de gas indicaron la revision?");
 		double gasLevel = reader.nextDouble();
@@ -324,7 +324,7 @@ public class Main{
 		int typeE = reader.nextInt();
 		reader.nextLine();
 
-		objContr.addElectricCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,batteryDuration,typeE);
+		objContr.addElectricCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,batteryDuration,typeE,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
 
 	}
 
@@ -401,7 +401,7 @@ public class Main{
 		double priceMT=reader.nextDouble();
 		reader.nextLine();
 		System.out.println("Que año tiene la revision?");
-		double yearMT = reader.nextInt();
+		int yearMT = reader.nextInt();
 		reader.nextLine();
 		System.out.println("Que niveles de gas indicaron la revision?");
 		double gasLevel = reader.nextDouble();
@@ -445,7 +445,7 @@ public class Main{
 		int typeE = reader.nextInt();
 		reader.nextLine();
 
-		objContr.addHybridCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG,batteryDuration,typeE);
+		objContr.addHybridCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG,batteryDuration,typeE,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
 
 	}
 
@@ -461,8 +461,23 @@ public class Main{
 		switch(option){
 
 		case 1:
-			break;
+			
+			System.out.println("Que tipo de vehiculo desea ver?\n"+
+			"1) Carro\n"+
+			"2) Motocicleta");
+			int option2 = reader.nextInt();
+			
+			switch(option2){
+			case 1:
+				System.out.println(objContr.showInfoCar());
+				break;
+			case 2: 
+				break;
+			}
 
+
+
+			break;
 		case 2: 
 			break;
 
