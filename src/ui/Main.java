@@ -2,15 +2,34 @@ package ui;
 import java.util.Scanner;
 import model.Concessionaire;
 
+/**
+ * Tarea integradora
+ * @author SebasL07
+ * @since May 2022
+ * @version 1.0
+ */
+
 public class Main{
 	
+	/**
+	 * reader is an object from the class Scanner from library of Java
+	 * */
 	private Scanner reader;
+	/**
+	 * objContr is an object from the class Concessionaire to connect model with ui
+	 * */
 	private Concessionaire objContr;
-	
+	/** Constructor method for the class Main
+	*initialize the objContr and the Scanner reader
+	*/
 	public Main() {
 		objContr= new Concessionaire();
 		reader = new Scanner(System.in);
 	}
+	/**
+	 * method main 
+	 * @param args String[]
+	 * */
 	public static void main(String [] args) {
 		
 		System.out.println("Iniciando la aplicacion...\n" +
@@ -27,7 +46,10 @@ public class Main{
 		}while (option!=0);
 		
 	}
-	
+	/**
+	 * show menu of option to do in the app
+	 * @return option that chose the user
+	 * */
 	public int showMenu() {
 		int option=0;
 
@@ -44,7 +66,10 @@ public class Main{
 		reader.nextLine();
 		return option;
 	}
-	
+	/**
+	 * show menu of option to do in the app
+	 * @param operation int that represents the option the option that chose the user
+	 * */
 	public void executeOperation(int operation) {
 		
 		switch(operation) {
@@ -77,6 +102,10 @@ public class Main{
 		}
 	}
 
+	/**
+	 * register vehicle is used for choose which vehicle to register
+	 * */
+
 	public void registerVehicle(){
 		System.out.println("Which kind of vehicle do you want to register?\n"+ 
 			"1) Car\n"+
@@ -89,6 +118,7 @@ public class Main{
 			registerCar();
 			break;
 		case 2:
+			registerMotorcycle();
 			break;
 		}
 	}
