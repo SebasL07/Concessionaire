@@ -20,8 +20,6 @@ public abstract class Car extends Vehicle{
 			this.type = CarType.PICKUP;
 			break;
 		}
-
-		
 	}
 
 	@Override
