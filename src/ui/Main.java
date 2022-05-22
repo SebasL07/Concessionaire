@@ -103,7 +103,7 @@ public class Main{
 	}
 
 	/**
-	 * register vehicle is used for choose which vehicle to register
+	 * registerVehicle is used for choose which vehicle to register
 	 * */
 
 	public void registerVehicle(){
@@ -122,7 +122,9 @@ public class Main{
 			break;
 		}
 	}
-
+	/**
+	 * registerCar is used for choose which car to register
+	 * */
 	public void registerCar(){
 		System.out.println("Que tipo de carro quiere registrar?\n"+ 
 			"1) Carro de gasolina\n"+
@@ -143,7 +145,9 @@ public class Main{
 			break;
 		}	
 	}
-
+	/**
+	 * registerGasCar is used for register a gas car
+	 * */
 	public void registerGasCar(){
 
 		System.out.println("Insert the brand of the car");
@@ -253,7 +257,9 @@ public class Main{
 
 		objContr.addGasCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
 	}
-
+	/**
+	 * registerElectriCar is used for register a electric car
+	 * */
 	public void registerElectricCar(){
 
 		System.out.println("Insert the brand of the car");
@@ -363,7 +369,9 @@ public class Main{
 		objContr.addElectricCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,batteryDuration,typeE,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
 
 	}
-
+	/**
+	 * registerHybridCar is used for register a hybrid car
+	 * */
 	public void registerHybridCar(){
 
 		System.out.println("Insert the brand of the car");
@@ -483,7 +491,9 @@ public class Main{
 
 		objContr.addHybridCar(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,numDoors,tintedWindows,type,tankCapacity,typeG,batteryDuration,typeE,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
 	}
-
+	/**
+	 * registerMotorCycle is used for register a motorcycle
+	 * */
 	public void registerMotorcycle(){
 
 		System.out.println("Cual es la marca de la moto?");
@@ -578,7 +588,9 @@ public class Main{
 
 		objContr.addMotorCycle(basePrice,brand,model,cylinderCapacity,mileage,wasUsed,licensePlate,type,tankCapacity,priceSoat,priceMT,priceProperty,yearSoat,yearMT,yearProperty,insurance,gasLevel);
 	}
-
+	/**
+	 * showInformation is used for show the information based on the option of the user
+	 * */
 	public void showInformation(){
 
 		System.out.println("Por que criterios quiere ver la informacion?\n"+
@@ -641,14 +653,18 @@ public class Main{
 			break;
 		}
 	}
-
+	/**
+	 * showDocumentByID is used for show the information of a vehicle by its id
+	 * */
 	public void showDocumentByID(){
 		System.out.println("Escriba el ID del vehiculo del cual desee ver la documentacion:");
 		String id = reader.nextLine();
 
 		System.out.println(objContr.showDocumentByID(id));
 	}
-
+	/**
+	 * informationParking is used for show the information of the parking based on the option of the user
+	 * */
 	public void informationParking(){
 		System.out.println("Que informacion desea ver del parqueadero?\n"+
 			"1) Listado de vehiculos en un rango de años\n"+
