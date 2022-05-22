@@ -56,7 +56,6 @@ public class Concessionaire{
 		addVehicle2Parking();
 	}
 
-
 	public void addHybridCar(double basePrice, String brand, int model, double cylinderCapacity, double mileage, int wasUsed, String licensePlate,int numDoors, int tintedWindows, int type, double tankCapacity, int typeG,double batteryDuration, int typeE,double priceSoat,double priceMT,double price, int yearSoat, int yearMT,int year, double insurance, double gasLevel){
 
 		boolean used = false;
@@ -238,7 +237,7 @@ public class Concessionaire{
 
 	public String printParking(){
 		String map = "";
-		
+
 		for (int i=0; i< SIZE_I; i++){ 
 			for (int j = 0; j < SIZE_J; j++){ 
 				if(parking[i][j]!=null){
@@ -267,6 +266,61 @@ public class Concessionaire{
 
 		ocuppation = (counter/(SIZE_I*SIZE_J))*100;
 		return ocuppation;
+	}
+
+	public String findInRange(int year1,int year2){
+
+		String msg = "";
+		if(year1<year2){
+			for(int i = 0; i<SIZE_I;i++){
+				for(int j = 0;j<SIZE_J;j++){
+					if(parking[i][j]!=null && parking[i][j].getModel() < year2 || parking[i][j].getModel() > year1){
+						msg+=parking[i][j].toString();
+					}
+				}
+			}
+		} else if(year1>year2){
+			for(int i = 0; i<SIZE_I;i++){
+				for(int j = 0;j<SIZE_J;j++){
+					if(parking[i][j]!=null && parking[i][j].getModel() > year2 || parking[i][j].getModel() < year1){
+						msg+=parking[i][j].toString();
+					}
+				}
+			}
+		}
+
+		return msg;
+	}
+
+	public String findNewestAndOldest(){
+
+		String msg = "";
+		int iNew = 0;
+		int jNew = 0;
+		int iOld = 0;
+		int jOld = 0;
+		for(int i = SIZE_I; i<0;i--){
+			for(int j = SIZE_J; j<0;j--){
+				if(parking[i][j].getModel()<parking[iOld][jOld].getModel()){
+					iOld = i;
+					jOld = j;
+				}
+			}
+		}
+		msg += "Mas viejo:\n"+ parking[iOld][jOld];
+
+		for(int i = SIZE_I; i<0;i--){
+			for(int j = SIZE_J; j<0;j--){
+				if(parking[i][j].getModel()>parking[iOld][jOld].getModel()){
+					iNew = i;
+					jNew = j;
+				}
+			}
+		}
+
+		msg += "Mas viejo:\n"+ parking[iNew][jNew];
+
+		return msg;
 	}
 
 

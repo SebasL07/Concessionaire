@@ -52,5 +52,10 @@ public class ElectricCar extends Car{
 	@Override
 	public void calculateConsumption(){
 		
+		if(cType == ChargerType.FAST){
+			batteryConsumption = (batteryDuration+13)*(super.getCylinderCapacity()/100);
+		} else if(cType == ChargerType.NORMAL){
+			batteryConsumption = (batteryDuration+18)*(super.getCylinderCapacity()/100);
+		}
 	}
 }

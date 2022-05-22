@@ -61,10 +61,7 @@ public abstract class Vehicle implements Consumption{
 			documents[2] = new PropertyCard(price,year);
 		}else{
 			documents[2] = null;
-		}
-		
-		
-		
+		}	
 	}
 
 	public  String showDocument(){

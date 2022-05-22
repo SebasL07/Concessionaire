@@ -13,7 +13,8 @@ public class Main{
 	}
 	public static void main(String [] args) {
 		
-		System.out.println("Iniciando la aplicacion...\n");
+		System.out.println("Iniciando la aplicacion...\n" +
+			"Hola, bienvenido al concesionario y parqueadero");
 		
 		Main ppal= new Main();
 		
@@ -31,7 +32,7 @@ public class Main{
 		int option=0;
 
 		System.out.println(
-				"\nHola, bienvenido al concesionario y parqueadero. Que desea hacer?\n" +
+				"\nQue desea hacer?\n" +
 				"(1) Registrar vehiculo\n" +
 				"(2) Mostrar informacion\n"+
 				"(3) Buscar documentacion de un vehiculo\n"+
@@ -62,7 +63,7 @@ public class Main{
 			break;
 
 		case 4:
-			System.out.println("1ra columna: 2014\n"+"2da columna: 2013\n"+"3ra columna: 2012\n"+"4ta columna: 2011\n"+"5ta columna: <2011\n"+
+			System.out.println("1ra columna: 2014\n"+"\n2da columna: 2013\n"+"\n3ra columna: 2012\n"+"\n4ta columna: 2011\n"+"\n5ta columna: <2011\n"+
 				objContr.printParking());
 			break;
 
@@ -627,9 +628,26 @@ public class Main{
 
 		switch(option){
 		case 1: 
+			System.out.println("En que rango de años desea ver la informacion:\n"+
+				"Año 1:\n"+
+				"1) 2014\n"+
+				"2) 2013\n"+
+				"3) 2012\n"+
+				"4) 2011\n"+
+				"5) <2011\n\n"+
+				"Año 2:\n"+
+				"1) 2014\n"+
+				"2) 2013\n"+
+				"3) 2012\n"+
+				"4) 2011\n"+
+				"5) <2011\n");
+			int year1 = reader.nextInt();
+			int year2 = reader.nextInt();
+			System.out.println("***Informacion de los carros***\n"+ objContr.findInRange(year1,year2));
 			break;
 
 		case 2: 
+			System.out.println(objContr.findNewestAndOldest());
 			break;
 
 		case 3:

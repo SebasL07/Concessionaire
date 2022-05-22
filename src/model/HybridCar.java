@@ -75,6 +75,12 @@ public class HybridCar extends Car implements IFuel{
 	public void calculateConsumption(){
 
 		gasConsumption = tankCapacity * (super.getCylinderCapacity()/180);
+
+		if(cType == ChargerType.FAST){
+			batteryConsumption = batteryDuration*(super.getCylinderCapacity()/200);
+		} else if(cType == ChargerType.NORMAL){
+			batteryConsumption = (batteryDuration+7)*(super.getCylinderCapacity()/200);
+		}
 	}
 
 	@Override
