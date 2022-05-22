@@ -34,8 +34,9 @@ public class Main{
 				"\nHola, bienvenido al concesionario y parqueadero. Que desea hacer?\n" +
 				"(1) Registrar vehiculo\n" +
 				"(2) Mostrar informacion\n"+
-				"(3) Buscar documentacionde un vehiculo\n"+
-				"(4) \n" +  
+				"(3) Buscar documentacion de un vehiculo\n"+
+				"(4) Imprimir mapa del parqueadero\n" + 
+				"(5) Informacion del parqueadero\n" + 
 				"(0) Para salir"
 				);
 		option= reader.nextInt();
@@ -61,7 +62,12 @@ public class Main{
 			break;
 
 		case 4:
-			
+			System.out.println("1ra columna: 2014\n"+"2da columna: 2013\n"+"3ra columna: 2012\n"+"4ta columna: 2011\n"+"5ta columna: <2011\n"+
+				objContr.printParking());
+			break;
+
+		case 5:
+			informationParking();
 			break;
 		
 		default:
@@ -610,6 +616,26 @@ public class Main{
 		String id = reader.nextLine();
 
 		System.out.println(objContr.showDocumentByID(id));
+	}
+
+	public void informationParking(){
+		System.out.println("Que informacion desea ver del parqueadero?\n"+
+			"1) Listado de vehiculos en un rango de años\n"+
+			"2) Vehiculo mas viejo y mas nuevo\n"+
+			"3) Porcentaje de ocupacion del parqueadero");
+		int option = reader.nextInt();
+
+		switch(option){
+		case 1: 
+			break;
+
+		case 2: 
+			break;
+
+		case 3:
+			System.out.println("El parqueadero se encuentra un " + objContr.calculateOccupation() + "% lleno");
+			break;
+		}
 	}
 }
 	
