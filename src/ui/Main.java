@@ -1,4 +1,4 @@
-package ui;
+zxpackage ui;
 import java.util.Scanner;
 import model.Concessionaire;
 
